@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("getall")]
-     //   [Authorize(Roles = "admin")]
+       // [Authorize(Roles = "admin")]
         public IActionResult GetAll()
         {
            var result = _productService.GetAll();
@@ -77,6 +77,7 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
         [HttpPost("update")]
+      //  [Authorize]
         public IActionResult Update(Product product)
         {
             var result = _productService.Update(product);
